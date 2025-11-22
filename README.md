@@ -5,17 +5,16 @@ This project calculates real-world distance, draws routes, estimates cab fare, a
 and shows a premium animated UI with colourful cars, glowing header, moving road, and more.
 
 ---
-## ✨ Preview  
+## 📸 Screenshots  
 
-### 🖼️ Home Screen
-![Home Screen](f0fed3ba-2cce-41bf-a8b9-4be016a8de9a.png)
+### 🏁 Header Preview  
+![Header Preview](header-preview.png)
 
-### 🗺️ Map + Pickup + Drop
-![Map Screen](ec6149c3-b1f7-4966-a56c-815b878a4729.png)
+### 🗺️ Map Screen Preview  
+![Map Preview](map-preview.png)
 
-### 💸 Fare Estimate + Driver
-![Fare & Driver](06acbea9-9e73-4f00-8f30-525b23d3c424.png)
-
+### 🎛️ Bottom Panel Preview  
+![Panel Preview](panel-preview.png)
 ---
 
 ## 🚀 Live Demo  
@@ -142,5 +141,6 @@ This project demonstrates:
 - Clean file structure  
 
 ---
+
 
 
