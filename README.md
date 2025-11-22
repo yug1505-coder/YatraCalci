@@ -18,8 +18,7 @@ and shows a premium animated UI with colourful cars, glowing header, moving road
 ---
 
 ## 🚀 Live Demo  
-🔗 *(Add link after enabling GitHub Pages)*  
-`https://yug1505-coder.github.io/YatraCalci/`
+🔗   https://yug1505-coder.github.io/YatraCalci/
 
 ---
 
@@ -113,7 +112,16 @@ Fare = Base Fare + (Distance × Price per km) + 5% GST
 ---
 
 ## 📸 Screenshots  
-*(Add your real screenshots later)*
+
+### 🏁 Header Preview  
+![Header Preview](header-preview.png)
+
+### 🗺️ Map Screen Preview  
+![Map Preview](map-preview.png)
+
+### 🎛️ Bottom Panel Preview  
+![Panel Preview](panel-preview.png)
+---
 
 ---
 
@@ -141,6 +149,7 @@ This project demonstrates:
 - Clean file structure  
 
 ---
+
 
 
 
