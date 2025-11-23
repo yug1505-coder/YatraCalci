@@ -149,6 +149,10 @@ This project demonstrates:
 - Clean file structure  
 
 ---
+© 2025 Yug Babbar. All Rights Reserved.
+
+---
+
 
 
 
