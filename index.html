@@ -13,8 +13,11 @@
 
   <!-- HEADER -->
   <header class="header">
+    <div class="header-title">
+      <h1>YatraCalci</h1>
+      <p class="subtitle">Map-Based Fare Estimator</p>
+    </div>
 
-    <!-- LEFT SIDE: ROAD + CARS -->
     <div class="header-cars-wrapper">
       <div class="road"></div>
       <div class="header-cars">
@@ -24,20 +27,6 @@
         <span class="car car4">🛺</span>
       </div>
     </div>
-
-    <!-- CENTER TITLE -->
-    <div class="header-title">
-      <h1>YatraCalci</h1>
-      <p class="subtitle">Map-Based Fare Estimator</p>
-    </div>
-
-    <!-- RIGHT SIDE: TRAFFIC + MONEY + CALCULATOR -->
-    <div class="header-icons">
-      <span class="traffic">🚦</span>
-      <span class="money">💸</span>
-      <span class="calculator">🧮</span>
-    </div>
-
   </header>
 
   <!-- MAP -->
@@ -45,54 +34,55 @@
 
   <!-- BOTTOM PANEL -->
   <div class="panel">
+    
+    <div class="panel-top">
+      <h2>Where to?</h2>
 
-    <h2>Where to?</h2>
+      <p class="hint">
+        1. Search any area OR drag the map.<br>
+        2. Click once = Pickup point.<br>
+        3. Click again = Drop point.<br>
+        4. Press "Find Ride" to get fare & driver.
+      </p>
 
-    <p class="hint">
-      1. Search any area OR drag the map.<br>
-      2. Click once = Pickup point.<br>
-      3. Click again = Drop point.<br>
-      4. Press "Find Ride" to get fare & driver.
-    </p>
-
-    <!-- SEARCH ANY PLACE -->
-    <div class="input-group">
-      <input type="text" id="searchInput" placeholder="Search location (ex: Airport, Connaught Place)">
-    </div>
-
-    <button id="searchMap" class="cta">Search on Map</button>
-
-    <button id="findRide" class="cta">Find Ride</button>
-
-    <p id="status" class="status"></p>
-
-    <!-- FARE CARD -->
-    <div id="fareCard" class="card hidden">
-      <h3>Fare Estimate</h3>
-      <p><strong>Distance:</strong> <span id="km"></span> km</p>
-      <p><strong>Estimated Fare:</strong> ₹<span id="fare"></span></p>
-    </div>
-
-    <!-- DRIVER CARD -->
-    <div id="driverCard" class="card hidden">
-      <h3>Driver Assigned</h3>
-      <div class="driver-row">
-        <div>
-          <p><strong>Name:</strong> <span id="driverName"></span></p>
-          <p><strong>Car:</strong> <span id="driverCar"></span></p>
-        </div>
-        <span class="rating" id="driverRating"></span>
+      <div class="input-group">
+        <input type="text" id="searchInput" placeholder="Search location">
       </div>
+
+      <button id="searchMap" class="cta">Search on Map</button>
+      <button id="findRide" class="cta">Find Ride</button>
+
+      <p id="status" class="status"></p>
     </div>
 
   </div>
 
+  <!-- FARE CARD -->
+  <div id="fareCard" class="card hidden">
+    <h3>Fare Estimate</h3>
+    <p><strong>Distance:</strong> <span id="km"></span> km</p>
+    <p><strong>Estimated Fare:</strong> ₹<span id="fare"></span></p>
+  </div>
+
+  <!-- DRIVER CARD -->
+  <div id="driverCard" class="card hidden">
+    <h3>Driver Assigned</h3>
+    <div class="driver-row">
+      <div>
+        <p><strong>Name:</strong> <span id="driverName"></span></p>
+        <p><strong>Car:</strong> <span id="driverCar"></span></p>
+      </div>
+      <span class="rating" id="driverRating"></span>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
   <script src="app.js"></script>
 
   <footer class="footer">
     <p>© 2025 YatraCalci · Built with precision & passion by <strong>Yug Babbar</strong></p>
   </footer>
+
 </body>
 </html>
-
