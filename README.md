@@ -10,7 +10,7 @@ and offers an attractive animated interface with a moving road and running cars.
 
 ### Header Preview
 
-![Header Preview](header-preview.png)
+![Header Preview](header-previeww.png)
 
 ### Map Screen Preview
 
@@ -153,3 +153,4 @@ This project demonstrates:
 ---
 
 © 2025 Yug Babbar. All rights reserved.
+
