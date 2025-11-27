@@ -1,66 +1,74 @@
-# 🚖 YatraCalci – Map-Based Fare Estimator  
+# YatraCalci – Map-Based Fare Estimator
 
-A modern, animated, map-driven cab fare estimator built using **HTML, CSS, JavaScript, and Leaflet Maps**.  
-This project calculates real-world distance, draws routes, estimates cab fare, assigns drivers,  
-and shows a premium animated UI with colourful cars, glowing header, moving road, and more.
+YatraCalci is a modern, animated, map-based cab fare estimator built using HTML, CSS, JavaScript, and Leaflet Maps.
+It calculates real-world distance, draws routes between points, estimates fare, assigns demo drivers,
+and offers an attractive animated interface with a moving road and running cars.
 
 ---
-## 📸 Screenshots  
 
-### 🏁 Header Preview  
+## Screenshots
+
+### Header Preview
+
 ![Header Preview](header-preview.png)
 
-### 🗺️ Map Screen Preview  
+### Map Screen Preview
+
 ![Map Preview](map-preview.png)
 
-### 🎛️ Bottom Panel Preview  
+### Bottom Panel Preview
+
 ![Panel Preview](panel-preview.png)
----
-
-## 🚀 Live Demo  
-🔗   https://yug1505-coder.github.io/YatraCalci/
 
 ---
 
-## 🌟 Features
+## Live Demo
 
-### 🗺️ Map Features
-- Click to set **Pickup** point  
-- Click again to set **Drop** point  
-- Automatic **route line**  
-- Real-world **distance calculation (Haversine Formula)**  
-- Search any place using **OpenStreetMap API**
-
-### 💸 Fare Calculation
-- Base fare + per km charge  
-- GST-like 5% tax  
-- Clean & modern UI  
-- Demo driver assignment
-
-### 🎨 Animated Header (Premium UI)
-- Glowing black header  
-- Moving road animation  
-- 4 colourful cars running  
-- Traffic light blinking  
-- Money 💸 & Calculator 🧮 pulsing animations  
-- Fully responsive mobile-friendly design
+[https://yug1505-coder.github.io/YatraCalci/](https://yug1505-coder.github.io/YatraCalci/)
 
 ---
 
-## 🧠 Tech Stack
+## Features
 
-| Component | Technology |
-|----------|------------|
-| Map Rendering | Leaflet.js |
-| Geocoding | Nominatim OSM API |
-| UI | HTML + CSS |
-| Animations | CSS Keyframes |
-| Logic | Vanilla JavaScript |
-| Hosting | GitHub Pages |
+### Map Features
+
+* Click once to set the pickup location
+* Click again to set the drop location
+* Draws a clean route between both points
+* Calculates the distance using the Haversine formula
+* Offers location search using the OpenStreetMap Nominatim API
+
+### Fare Calculation
+
+* Base fare + per-kilometer pricing
+* Includes a 5% tax
+* Displays fare details clearly
+* Assigns a random demo driver with name, car, and rating
+
+### Animated Header
+
+* Dark glowing header
+* Moving road animation
+* Colorful cars moving in different lanes
+* Fully responsive layout suitable for both mobile and desktop screens
 
 ---
 
-## 📁 Folder Structure
+## Tech Stack
+
+| Component     | Technology         |
+| ------------- | ------------------ |
+| Map Rendering | Leaflet.js         |
+| Geocoding     | Nominatim OSM API  |
+| Frontend      | HTML and CSS       |
+| Animations    | CSS Keyframes      |
+| Logic         | Vanilla JavaScript |
+| Hosting       | GitHub Pages       |
+
+---
+
+## Folder Structure
+
 ```
 YatraCalci/
 ├── index.html
@@ -68,92 +76,80 @@ YatraCalci/
 ├── app.js
 └── README.md
 ```
+
 ---
 
-## 🔧 Installation & Run Locally
+## Installation and Running Locally
 
-### 1️⃣ Clone or Download
+### 1. Clone the Repository
+
+```
 git clone https://github.com/yug1505-coder/YatraCalci.git
+```
 
+### 2. Open the Project
 
+Open the folder in a code editor, or simply double-click the `index.html` file.
 
-### 2️⃣ Open the Project
-- Open folder in VS Code  
-- OR just double-click `index.html`
+### 3. Optional: Use Live Server
 
-### 3️⃣ Optional (Using Live Server)
-Right-click → **Open with Live Server**  
-(This gives auto-refresh & easy testing)
-
----
-
-## 🧩 How It Works
-
-### ▶ Step 1 — Pickup & Drop
-- 1st map click → Pickup  
-- 2nd click → Drop  
-- 3rd click → Reset and set new pickup
-
-### ▶ Step 2 — Distance Calculation
-- Uses **Haversine Formula**  
-- Accurate real-world distance in kilometers
-
-### ▶ Step 3 — Route Draw
-- Leaflet polyline draws a clean route line  
-- Pickup → Drop
-
-### ▶ Step 4 — Fare Calculation
-Fare = Base Fare + (Distance × Price per km) + 5% GST
-
-
-### ▶ Step 5 — Driver Assignment
-- A random demo driver is displayed with rating
+If using VS Code, right-click on `index.html` and select “Open with Live Server” for easier testing.
 
 ---
 
-## 📸 Screenshots  
+## How It Works
 
-### 🏁 Header Preview  
-![Header Preview](header-preview.png)
+### 1. Pickup and Drop Selection
 
-### 🗺️ Map Screen Preview  
-![Map Preview](map-preview.png)
+* First click on the map sets the pickup point
+* Second click sets the drop point
+* A third click resets and allows selecting new points
 
-### 🎛️ Bottom Panel Preview  
-![Panel Preview](panel-preview.png)
+### 2. Distance Calculation
+
+Distance between the two points is calculated using the Haversine formula, providing an accurate real-world value.
+
+### 3. Route Drawing
+
+Leaflet’s routing engine draws a clean polyline route between the pickup and drop locations.
+
+### 4. Fare Calculation
+
+The fare is calculated using the formula:
+Base Fare + (Distance × Price per km) + 5% tax
+
+### 5. Driver Assignment
+
+A random demo driver is displayed with basic details such as name, car model, and rating.
+
 ---
 
----
+## License
 
-## 🔒 License  
-MIT License recommended.  
-Feel free to use or modify with credit.
+MIT License suggested. You may use or modify the project with proper credit.
 
 ---
 
-## 👨‍💻 Author  
-**Yug Babbar**  
-B.Tech CSE (2nd Year)  
-Full-Stack + AI Learner  
-GitHub: https://github.com/yug1505-coder  
+## Author
+
+Yug Babbar
+B.Tech CSE (2nd Year)
+Full-Stack and AI Learner
+GitHub: [https://github.com/yug1505-coder](https://github.com/yug1505-coder)
 
 ---
 
-## 📝 Recruiter Notes
+## Notes for Recruiters
+
 This project demonstrates:
-- JavaScript logic  
-- API usage  
-- UI/UX animation skills  
-- Real-time map rendering  
-- Frontend problem solving  
-- Clean file structure  
+
+* Practical JavaScript logic
+* Working with external APIs
+* Map-based UI development
+* Frontend animation and UI design skills
+* Clean file structure and organization
+* Real-time interaction handling
 
 ---
-© 2025 Yug Babbar. All Rights Reserved.
 
----
-
-
-
-
-
+© 2025 Yug Babbar. All rights reserved.
