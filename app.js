@@ -1,5 +1,5 @@
-// ================= MAP SETUP =================
-// Initialize map (center: Delhi)
+// Setup of map
+// Default Center - Delhi
 const map = L.map("map").setView([28.6139, 77.2090], 12);
 
 // Load OSM tiles
@@ -12,25 +12,33 @@ let pickupPoint = null;
 let dropPoint = null;
 let pickupMarker = null;
 let dropMarker = null;
+
+// Routing controller
 let routeLine = null;
 
-// ================= MAP CLICK =================
+
+//  MAP Click
 // Set pickup, drop, or reset
 map.on("click", function (event) {
   const point = event.latlng;
 
   if (!pickupPoint) {
+    // Set pickup
     pickupPoint = point;
     if (pickupMarker) map.removeLayer(pickupMarker);
     pickupMarker = L.marker(point).addTo(map).bindPopup("Pickup").openPopup();
+
   } else if (!dropPoint) {
+    // Set drop
     dropPoint = point;
     if (dropMarker) map.removeLayer(dropMarker);
     dropMarker = L.marker(point).addTo(map).bindPopup("Drop").openPopup();
+
   } else {
+    // Reset & set new pickup
     if (pickupMarker) map.removeLayer(pickupMarker);
     if (dropMarker) map.removeLayer(dropMarker);
-    if (routeLine) map.removeLayer(routeLine);
+    if (routeLine) map.removeControl(routeLine);
 
     pickupPoint = point;
     dropPoint = null;
@@ -39,7 +47,8 @@ map.on("click", function (event) {
   }
 });
 
-// ================= SEARCH LOCATION =================
+
+//SEARCH LOCATION
 // Find place using Nominatim API
 document.getElementById("searchMap").addEventListener("click", function () {
   const place = document.getElementById("searchInput").value.trim();
@@ -54,20 +63,13 @@ document.getElementById("searchMap").addEventListener("click", function () {
       const lon = parseFloat(data[0].lon);
 
       map.setView([lat, lon], 15);
-
       L.marker([lat, lon]).addTo(map).bindPopup("Searched: " + place).openPopup();
-
-      map.dragging.enable();
-      map.scrollWheelZoom.enable();
-      map.touchZoom.enable();
-      map.doubleClickZoom.enable();
-      map.boxZoom.enable();
     })
     .catch(() => alert("Search error. Try again."));
 });
 
-// ================= DISTANCE (HAVERSINE) =================
-// Calculate km distance
+
+//DISTANCE
 function getDistanceKm(a, b) {
   const R = 6371;
   const lat1 = a.lat * Math.PI / 180;
@@ -84,8 +86,8 @@ function getDistanceKm(a, b) {
   return R * y;
 }
 
-// ================= FIND RIDE =================
-// Compute distance, fare, and show driver
+
+//  FIND RIDE 
 document.getElementById("findRide").addEventListener("click", function () {
 
   if (!pickupPoint || !dropPoint)
@@ -100,16 +102,43 @@ document.getElementById("findRide").addEventListener("click", function () {
 
   status.textContent = "Calculating...";
 
-  if (routeLine) map.removeLayer(routeLine);
+  // Hiding(Where to? section) !!!
 
-  routeLine = L.polyline(
-    [
-      [pickupPoint.lat, pickupPoint.lng],
-      [dropPoint.lat, dropPoint.lng]
+document.querySelector(".panel-top").style.display = "none";
+
+
+
+  // REMOVE previous route if any
+  if (routeLine) {
+    map.removeControl(routeLine);
+  }
+
+  // CREATE REAL ROAD ROUTE WITHOUT UI PANEL
+  routeLine = L.Routing.control({
+    waypoints: [
+      L.latLng(pickupPoint.lat, pickupPoint.lng),
+      L.latLng(dropPoint.lat, dropPoint.lng)
     ],
-    { color: "blue", weight: 4 }
-  ).addTo(map);
+    lineOptions: {
+      styles: [{ color: "blue", weight: 4 }]
+    },
+    addWaypoints: false,
+    draggableWaypoints: false,
+    fitSelectedRoutes: true,
+    show: false,
+    createMarker: () => null  // prevent extra markers
+  }).addTo(map);
 
+  // hiding the annoying white instruction panel
+  routeLine.on("routesfound", function () {
+    const panels = document.getElementsByClassName("leaflet-routing-container");
+    for (let p of panels) {
+      p.style.display = "none";
+    }
+  });
+
+
+  // Compute distance(same logic is implementeed)
   const distance = getDistanceKm(pickupPoint, dropPoint);
   const distanceKm = distance.toFixed(2);
 
@@ -127,6 +156,7 @@ document.getElementById("findRide").addEventListener("click", function () {
     { name: "Priya Singh", car: "Hyundai Creta", rating: "⭐ 4.9" }
   ];
 
+  // Random driver
   const driver = drivers[Math.floor(Math.random() * drivers.length)];
 
   setTimeout(() => {
